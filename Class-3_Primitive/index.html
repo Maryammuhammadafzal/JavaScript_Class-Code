@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <!-- Primtive Vs Non Primitive Data Types -->
+
+    <!-- 7 Primitive Data types Primitive data types are fundamental of javascript -->
+    <!-- Null
+    Number
+    String
+    Symbol
+    Boolean 
+    Bigint
+    Undefined -->
+
+    <!-- Non Primitive Data Types  -->
+     <!-- Object -->
+      <!-- function -->
+      <!-- Array  -->
+
+      <script>
+        //Primitive Data types Example
+
+        let a = null;
+        let b = 54;
+        let c = "Maryam";
+        let d = true;   //or false
+        let e = BigInt("32");
+        let f = Symbol("Maryam Afzal");
+        let g = undefined;
+
+        console.log(a,b,c,d,e,f,g);
+
+        //Check the data types 
+        console.log(typeof e);
+        
+        // Non primitive data types
+        // Objects
+
+        const item = {
+            "Apple" : true,
+            "Mango" : 50,
+            "grapes" : "Mary",
+            "Oranges" : null,
+            "banana" : undefined,
+        }
+
+        console.log(item["Mango"]); //50
+        console.log(item["Apple"]); //true
+        console.log(item["banana"]); //undefined
+        console.log(item["grapes"]); //Mary
+        console.log(item["Oranges"]); //null
+        
+      </script>
+
+</body>
+</html>
