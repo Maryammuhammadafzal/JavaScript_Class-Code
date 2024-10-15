@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Variable are like a container
+    it store diffrenet types of value -->
+
+    <!-- we can change the type of a varible at run time that's why it 
+    is called "Dynamic language" -->
+
+    <script>
+        // Let is variable declearation
+        // a is an identifier or variable name
+        // = is assignment operator
+        // 20 is a value of a which type is number
+        let a = 20;
+        console.log(a); // log the variable always with it's name
+
+        // variable name rules
+        //Don't do
+        // 1 not start with number or special charactor
+        // 2 not uppercase
+        // 3 not reserved keyword like var alert etc
+        
+        //Do
+        // 1 start with letters , underscore, doller Sign
+        // 2 small letters
+
+        // We can reassigned  the value of a variable
+        a = 30
+        console.log(a); // 30
+
+        // var is not recommended because it can throw bugs in our code it can reasssign or redecleared both
+        // Let is using for block scope it can reassign not redecleared
+        //const is used for constant value It not change again 
+         
+        // var is global scope it can change every where
+        // let is not change outside the block
+        // Const is everywhere not change
+
+        var b = 2;
+        console.log(b); //2
+        {
+            var b = 3;
+            console.log(b);//3
+        }
+
+        var b = 4;
+        console.log(b); //4
+        
+        let c = 2;
+        console.log(b); //2
+        {
+            let c = 3;
+            console.log(b); //3
+        }
+
+        let c = 4;
+        console.log(b);// redecleared error
+        
+        const d = 2;
+        console.log(b); //2
+        {
+          const d = 3;
+            console.log(b); //3
+            d = 5; 
+            console.log(d) //reassigned error
+        }
+
+        const d = 4;
+        console.log(b);// redecleared error
+
+        
+    </script>
+
+</body>
+</html>
