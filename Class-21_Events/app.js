@@ -61,9 +61,13 @@ a[0].onclick = () => {
  //Event object
 
  // when an obbjects happens the browser create an event objects puts details into it and passes it as an argument to the handle
- let eventObj = function (e) {
+btn.onclick = function (e) {
     console.log(e.target);
     console.log(e);
+    console.log(e.type, e.clientX , e.clientY);
+    console.log(e.currentTarget);
+    
     
  }
  
+
