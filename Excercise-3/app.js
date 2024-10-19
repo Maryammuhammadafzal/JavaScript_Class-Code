@@ -1,5 +1,7 @@
 
-//Excercise 03
+// Excercise 03
+
+"use strict"
 let arr = [
 
     `Did you hear about the octopus that held up a convenience store? It was an armed-robbery.`,
@@ -126,30 +128,71 @@ let arr = [
     `Knock, knock! Who's there? Hank.  Hank who? Oh, you're welcome!`,
     `Knock, knock! Who's there? Neele. Needle who? Needle little loan, I'm short on cash this month.`,
     `Knock, knock! Who's there? Abby. Abby who? Abby birthday to you!`,
-]
+];
+
+
+    var color;
+    var colorArray = [
+        "#FF6633",
+        "#FFB399",
+        "#FF33FF",
+        "#FFFF99",
+        "#00B3E6",
+        "#E6B333",
+        "#3366E6",
+        "#999966",
+        "#809980",
+        "#E6FF80",
+        "#1AFF33",
+        "#999933",
+        "#FF3380",
+        "#CCCC00",
+        "#66E64D",
+        "#4D80CC",
+        "#FF4D4D",
+        "#99E6E6",
+        "#6666FF"
+    ];
+    // for (var i = 0; i < colorArray; i++) {
+       
+    // }
+
+
+
 
 let body = document.querySelector(".container");
+
+// Show Button Function
 let showButton = () => {
     body.innerHTML = `,<button id="start">Start Jokes</button>`;
 }
 showButton();
 
+let randomNum = 0;
+
+// add event listener function on start button
 let startBtn = document.querySelector("#start");
-let randomNum = Math.floor(Math.random()*arr.length);
-
 startBtn &&startBtn.addEventListener("click", () => {
-    body.innerHTML = `<div class="box">
-                        <h1>Funny Joke</h1>
-                        <p>${arr[randomNum]}</p>
-                        <button id="next">Next</button>
-                        </div>`
+   displayJoke();          
 })
 
-let nextBtn = document.querySelector("#next");
-nextBtn && nextBtn.addEventListener("click", () => {
+let displayJoke = () => {
+    // random jokes
+    randomNum = Math.floor(Math.random()*arr.length);
+    // Joke box
     body.innerHTML = `<div class="box">
-                        <h1>Funny Joke</h1>
-                        <p>${arr[randomNum]}</p>
-                        <button id="next">Next</button>
-                        </div>`
-})
+    <h1>Funny Joke</h1>
+    <p>${arr[randomNum]}</p>
+    <button id="next">Next</button>
+    </div>`;
+
+    // Random box color
+    color = colorArray[Math.floor(Math.random() * colorArray.length)];
+    let box = document.querySelector(".box")
+    box.style.background = color;
+    
+    // add event listener function on next button
+    let nextBtn = document.querySelector("#next");
+    nextBtn && nextBtn.addEventListener("click", displayJoke);
+    
+}
