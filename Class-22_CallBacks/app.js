@@ -96,8 +96,8 @@ function loadScript(src, callback) {
 }
 console.log(console.log("https://www.google.com", hello));
 
-function hello(error , src) {
-    
+function hello(error, src) {
+
     if (error) {
         console.log(error);
         return error
@@ -110,23 +110,97 @@ function hello(error , src) {
 
 // WE can do this all by arrow function
 
-let loadScript = (src , callback) => {
+let loadScript = (src, callback) => {
     let myScript = document.createElement('script');
     myScript.src = src;
-    myScript.onload = () => callback(null,src);
+    myScript.onload = () => callback(null, src);
     myScript.onerror = () => callback(new Error('Src is not reached'));
     document.body.appendChild(myScript);
 
 }
-loadScript('https://www.abc.com' , function (error , src) {
+loadScript('https://www.abc.com', function (error, src) {
     if (error) {
         console.log("error");
-        return error
+        sendEmergencyMessageToCeo();
+        return
     }
     else {
         console.log(src);
     }
 });
 
+
 //Call BAck Hell
 
+
+//Pyramid of Doom
+//when we have call back inside call backs the code get difiicult to manage
+
+
+// loadScript('https://www.abc.com', function (error, src) {
+//     if (error) {
+//         console.log("error");
+//         sendEmergencyMessageToCeo();
+//         return
+//     }
+//     loadScript('https://www.abc.com', function (error, src) {
+//         if (error) {
+//             console.log("error");
+//             sendEmergencyMessageToCeo();
+//             return
+//         }
+//         loadScript('https://www.abc.com', function (error, src) {
+//             if (error) {
+//                 console.log("error");
+//                 sendEmergencyMessageToCeo();
+//                 return
+//             }
+
+//             loadScript('https://www.abc.com', function (error, src) {
+//                 if (error) {
+//                     console.log("error");
+//                     sendEmergencyMessageToCeo();
+//                     return
+//                 }
+
+//                 loadScript('https://www.abc.com', function (error, src) {
+//                     if (error) {
+//                         console.log("error");
+//                         sendEmergencyMessageToCeo();
+//                         return
+//                     }
+//                     loadScript('https://www.abc.com', function (error, src) {
+//                         if (error) {
+//                             console.log("error");
+//                             sendEmergencyMessageToCeo();
+//                             return
+//                         }
+//                         loadScript('https://www.abc.com', function (error, src) {
+//                             if (error) {
+//                                 console.log("error");
+//                                 sendEmergencyMessageToCeo();
+//                                 return
+//                             }
+//                             loadScript('https://www.abc.com', function (error, src) {
+//                                 if (error) {
+//                                     console.log("error");
+//                                     sendEmergencyMessageToCeo();
+//                                     return
+//                                 }
+
+//                             });
+//                         });
+//                     });
+//                 });
+//             });
+//         });
+
+//     });
+
+// });
+
+//As call become more nested, the code become deeper and increasingly more dffivult to manage espacially if we have real code.
+// This is some tme called "callback hell" or "pyramid of Doom"
+
+// The Pyramid of these calls grows towards the right with every "asynchronous action" .
+//Soon it spral out of control .So this way of codng is not very good! 
