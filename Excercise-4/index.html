@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clock</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(24, 23, 23);
+        }
+        .time{
+            background-color: rgb(95, 193, 167);
+            color: rgb(6, 112, 86);
+            box-shadow: 10px 20px 30px rgb(122, 168, 145) ,
+             -10px -7px 16px rgb(108, 146, 121);
+            width: 45%;
+            height: 250px;
+            font-size: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 2rem;
+            border-radius: 20px;
+            border: 8px solid rgb(14, 83, 48);
+        }
+    </style>
 </head>
 <body>
+    <div class="time"></div>
     <script src="app.js"></script>
 </body>
 </html>
